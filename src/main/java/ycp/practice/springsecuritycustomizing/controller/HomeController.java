@@ -1,7 +1,5 @@
 package ycp.practice.springsecuritycustomizing.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +12,7 @@ import ycp.practice.springsecuritycustomizing.authentication.CustomUserDetails;
 public class HomeController {
 
 	@RequestMapping("/")
-	public String hello(HttpServletRequest request) {
+	public String hello() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		
 		// AuthenticationProvider# authenticate()에서 return하는 UsernamePasswordAuthenticationToken의 첫 번째 인자(Object Principal)일 경우 다음과 같은 Exception이 발생한다.
